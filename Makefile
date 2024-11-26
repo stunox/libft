@@ -9,18 +9,19 @@ SRC=*.c
 all: ${NAME}
 
 ${NAME}: ${SRC}
-	make -C ./ft_printf all
-	${CC} ${CFLAGS} -c ${SRC} -fpic -I./ft_printf/includes
-	ar rc ${NAME} *.o ./ft_printf/bin/*.o
-	ranlib ${NAME}
+	@make -C ./ft_printf all
+	@echo "Compiling libft..."
+	@${CC} ${CFLAGS} -c ${SRC} -fpic -I./ft_printf/includes
+	@ar rc ${NAME} *.o ./ft_printf/bin/*.o
+	@ranlib ${NAME}
+	@echo "Successfully compiled libft!"
 
 clean:
-	rm -f *.o
-	make -C ./ft_printf clean
+	@rm -f *.o
 
 fclean: clean
-	rm -f ${NAME}
-	make -C ./ft_printf fclean
+	@rm -f ${NAME}
+	@make -C ./ft_printf fclean
 
 re: fclean all
 
