@@ -11,6 +11,8 @@ YELLOW = \033[0;33m
 CYAN = \033[0;36m
 MAGENTA = \033[0;35m
 WHITE = \033[0;37m
+BLACK = \033[0;30m
+INVISIBLE = \033[8m
 RESET = \033[0m
 
 .PHONY: all bonus clean fclean re
@@ -24,6 +26,7 @@ ${NAME}: ${SRC}
 	@ar rc ${NAME} *.o ./ft_printf/bin/*.o 2> /dev/null || true
 	@ranlib ${NAME} 2> /dev/null || true
 	@echo "${GREEN}Successfully compiled libft!${RESET}" || @echo "${RED}Failed to compile libft! ${RESET}"
+	@echo "${INVISIBLE}"
 
 clean:
 	@rm -f *.o
