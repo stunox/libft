@@ -9,11 +9,11 @@ SRC=*.c
 all: ${NAME}
 
 ${NAME}: ${SRC}
-	@make -C ./ft_printf all
+	@make -C ./ft_printf all >2 /dev/null || true
 	@echo "Compiling libft..."
-	@${CC} ${CFLAGS} -c ${SRC} -fpic -I./ft_printf/includes
-	@ar rc ${NAME} *.o ./ft_printf/bin/*.o
-	@ranlib ${NAME}
+	@${CC} ${CFLAGS} -c ${SRC} -fpic -I./ft_printf/includes 2> /dev/null || true
+	@ar rc ${NAME} *.o ./ft_printf/bin/*.o 2> /dev/null || true
+	@ranlib ${NAME} 2> /dev/null || true
 	@echo "Successfully compiled libft!"
 
 clean:

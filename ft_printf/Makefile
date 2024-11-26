@@ -20,17 +20,17 @@ OBJ=$(addprefix $(BIN_DIR)/, $(SRC_FILES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ) 2> /dev/null || true
 
 $(BIN_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(BIN_DIR)
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	@mkdir -p $(BIN_DIR) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@ 2> /dev/null || true
 
 clean:
-	@rm -rf $(BIN_DIR)
+	@rm -rf $(BIN_DIR) 2> /dev/null || true
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) 2> /dev/null || true
 
 re: fclean all
 
