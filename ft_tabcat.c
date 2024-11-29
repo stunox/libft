@@ -16,11 +16,13 @@ char	**ft_tabcat(char **tab1, char **tab2)
 {
 	char	**res;
 	int		i;
+	int		len;
 	int		j;
 
 	i = -1;
 	j = -1;
-	res = (char **)malloc((ft_tablen(tab1) + ft_tablen(tab2) + 1) * sizeof(char *));
+	len = ft_tablen(tab1);
+	res = (char **)malloc((len + ft_tablen(tab2) + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
 	while (tab1[++i])
