@@ -16,10 +16,12 @@ char	*ft_strrepeat(char *str, int n)
 {
 	char	*res;
 	int		i;
+	int		res_i;
 	int		j;
 
 	i = 0;
 	j = 0;
+	res_i = 0;
 	if (n <= 0)
 		return (NULL);
 	res = (char *)malloc((ft_strlen(str) * n) * sizeof(char) + 1);
@@ -28,9 +30,10 @@ char	*ft_strrepeat(char *str, int n)
 	while (i < n)
 	{
 		while (str[j])
-			res[i++] = str[j++];
+			res[res_i++] = str[j++];
 		j = 0;
+		i++;
 	}
-	res[i] = '\0';
+	res[res_i] = '\0';
 	return (res);
 }
