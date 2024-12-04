@@ -7,7 +7,7 @@ SRC_DIR=src
 SRC_SUBDIRS=gnl io list memory string utils
 SRC=$(addprefix ${SRC_DIR}/, $(addsuffix /${SRC_FILES}, ${SRC_SUBDIRS}))
 INCLUDES = -I./includes
-OBJ
+
 GREEN = \033[0;32m
 RED = \033[0;31m
 BLUE = \033[0;34m
@@ -24,7 +24,7 @@ RESET = \033[0m
 all: ${NAME}
 
 ${NAME}: ${SRC}
-	@make -C ${SRC_DIR}/ft_printf all >2 /dev/null || true
+	@make -C ${SRC_DIR}/ft_printf all 2> /dev/null || true
 	@echo "${BLUE}Compiling libft...${RESET}"
 	@${CC} ${CFLAGS} -c ${SRC} -fpic -I${SRC_DIR}/ft_printf/includes ${INCLUDES} 2> /dev/null || true
 	@ar rc ${NAME} *.o ${SRC_DIR}/ft_printf/bin/*.o 2> /dev/null || true
