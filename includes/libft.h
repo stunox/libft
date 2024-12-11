@@ -37,6 +37,7 @@ int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
+char				*ft_last_char(char *str);
 void				ft_lst_addback(t_list **lst, t_list *new);
 void				ft_lst_addfront(t_list **lst, t_list *new);
 t_list				*ft_lst_at(t_list *lst, int index);
