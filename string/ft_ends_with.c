@@ -6,7 +6,7 @@
 /*   By: nbasheer <nbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:10:22 by nbasheer          #+#    #+#             */
-/*   Updated: 2024/12/11 12:12:12 by nbasheer         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:51:28 by nbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_ends_with(char *str, char c)
 {
-	if (!str)
+	if (!str || !*str)
 		return (0);
 	return (str[ft_strlen(str) - 1] == c);
 }

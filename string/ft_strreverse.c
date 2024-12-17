@@ -15,13 +15,11 @@
 int	ft_tablen(void *tab)
 {
 	int		i;
-	int		**ptr;
 
 	i = 0;
 	if (!tab)
 		return (0);
-	ptr = (int **)tab;
-	while (*ptr && *ptr[i])
+	while (((char **)tab)[i])
 		i++;
 	return (i);
 }
