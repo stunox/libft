@@ -6,7 +6,7 @@
 /*   By: nbasheer <nbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:52:44 by nbasheer          #+#    #+#             */
-/*   Updated: 2024/12/17 12:45:56 by nbasheer         ###   ########.fr       */
+/*   Updated: 2024/12/17 12:46:30 by nbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_isspace(int c)
 		|| c == '\v' || c == '\f' || c == '\r');
 }
 
-char	*get_first_word(char *str)
+char	*ft_first_word(char *str)
 {
 	int		i;
 	char	*word;
