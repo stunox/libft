@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pop_index.c                                     :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbasheer <nbasheer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 12:18:14 by nbasheer          #+#    #+#             */
-/*   Updated: 2024/12/17 11:47:22 by nbasheer         ###   ########.fr       */
+/*   Created: 2024/12/17 11:47:54 by nbasheer          #+#    #+#             */
+/*   Updated: 2024/12/17 11:47:58 by nbasheer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_pop_index(char **tab, int index)
+int	ft_tablen(char **tab)
 {
-	char	**new_tab;
-	int		i;
-	int		j;
+	int	i;
 
-	if (!tab || index < 0 || index >= ft_tablen(tab))
-		return (tab);
-	new_tab = (char **)malloc(sizeof(char *) * ft_tablen(tab));
-	if (!new_tab)
-		return (NULL);
-	i = -1;
-	j = -1;
-	while (tab[++i])
-	{
-		if (i == index)
-			continue ;
-		new_tab[++j] = ft_strdup(tab[i]);
-	}
-	new_tab[++j] = NULL;
-	ft_tabfree(tab);
-	return (new_tab);
+	i = 0;
+	if (!tab)
+		return (0);
+	while (tab[i])
+		i++;
+	return (i);
 }
