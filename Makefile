@@ -2,10 +2,8 @@ NAME=libft.a
 CC=cc
 CFLAGS=-Wall -Wextra -Werror
 
-SRC_FILES=*.c
-SRC_DIRS=gnl io list memory string utils
+SRC=./*.c
 # they are at the root, so there is no /srcs dir
-SRC=${addprefix ./, ${addsuffix /${SRC_FILES}, ${SRC_DIRS}}}
 
 GREEN = \033[0;32m
 RED = \033[0;31m
