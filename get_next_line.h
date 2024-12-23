@@ -31,6 +31,6 @@ typedef struct s_fd_temp
 
 char		*add_str(char *str, char *buffer, int to_free);
 int			init_temp(t_fd_temp **new_temp, int i, int fd);
-char		*get_next_line(int fd);
+char		*get_next_line(int fd, int nl);
 
 #endif // GET_NEXT_LINE_H 

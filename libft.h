@@ -96,7 +96,7 @@ int					ft_toupper(int c);
 char				*ft_replace(char *str, char *replace);
 int					ft_printf(const char *format, ...);
 char				*ft_first_word(char *str);
-char				*get_next_line(int fd);
+char				*get_next_line(int fd, int nl);
 void				*init_mem(int len, int size, char type);
 void				*ft_realloc(void *ptr, size_t size);
 size_t				ft_memlen(void *ptr);

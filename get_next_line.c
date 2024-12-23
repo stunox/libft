@@ -71,7 +71,7 @@ static void	load_temp(char **temp, char **line)
 	}
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int nl)
 {
 	char		*line;
 	static char	*temp;
@@ -87,14 +87,12 @@ char	*get_next_line(int fd)
 	{
 		n = read(fd, buf, BUFFER_SIZE * (temp == NULL));
 		if (n <= 0 || buf[0] == '\0')
-		{
-			if (line && *line)
-				return (line);
-			return (NULL);
-		}
+			break ;
 		buf[n] = '\0';
 		if (get_line(buf, &temp, &line, n))
 			break ;
 	}
-	return (line);
+	if (line && *line)
+		return (ft_replace(line, ft_strtrim(line, (char [2]){'\n' * nl, '\0'})));
+	return (NULL);
 }
