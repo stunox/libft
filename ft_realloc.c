@@ -15,6 +15,7 @@
 void	*ft_realloc(void *ptr, size_t size)
 {
 	size_t	len;
+	void	*new;
 
 	if (ptr == NULL)
 		return (init_mem(1, size, 'm'));
@@ -31,7 +32,9 @@ void	*ft_realloc(void *ptr, size_t size)
 	}
 	else
 	{
+		new = init_mem(1, size, 'm');
+		ft_memcpy(new, ptr, len);
 		free(ptr);
-		return (init_mem(1, size, 'm'));
+		return (new);
 	}
 }
