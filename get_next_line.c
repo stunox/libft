@@ -77,6 +77,7 @@ char	*get_next_line(int fd, int nl)
 	static char	*temp;
 	char		buf[BUFFER_SIZE + 1];
 	int			n;
+	char		*set;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
@@ -92,7 +93,8 @@ char	*get_next_line(int fd, int nl)
 		if (get_line(buf, &temp, &line, n))
 			break ;
 	}
+	set = (char [3]){'\r', '\n' * nl, '\0'};
 	if (line && *line)
-		return (ft_replace(line, ft_strtrim(line, (char [2]){'\n' * nl, '\0'})));
+		return (ft_replace(line, ft_strtrim(line, set)));
 	return (NULL);
 }
